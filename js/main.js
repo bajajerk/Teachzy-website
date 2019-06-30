@@ -848,24 +848,24 @@ $(document).ready(function () {
 
     //Event contact form
 
-    $("#event-contact-button").click(function () {
-        var error = ValidationEventContactForm();
-        if (error) {
-            $.ajax({
-                type: "post",
-                url: "https://formspree.io/studyapp121@gmail.com",
-                data: $("#eventcontactform").serialize(),
-                success: function (result) {
-                    $('input[type=text],textarea').each(function () {
-                        $(this).val('');
-                    })
-                    $("#success-contact").html(result);
-                    $("#success-contact").fadeIn("slow");
-                    $('#success-contact').delay(4000).fadeOut("slow");
-                }
-            });
-        }
-    });
+    // $("#event-contact-button").click(function () {
+    //     var error = ValidationEventContactForm();
+    //     if (error) {
+    //         $.ajax({
+    //             type: "post",
+    //             url: "https://formspree.io/studyapp121@gmail.com",
+    //             data: $("#eventcontactform").serialize(),
+    //             success: function (result) {
+    //                 $('input[type=text],textarea').each(function () {
+    //                     $(this).val('');
+    //                 })
+    //                 $("#success-contact").html(result);
+    //                 $("#success-contact").fadeIn("slow");
+    //                 $('#success-contact').delay(4000).fadeOut("slow");
+    //             }
+    //         });
+    //     }
+    // });
     function ValidationEventContactForm() {
         var error = true;
         $('#eventcontactform input[type=text]').each(function (index) {
