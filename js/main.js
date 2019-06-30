@@ -852,8 +852,8 @@ $(document).ready(function () {
         var error = ValidationEventContactForm();
         if (error) {
             $.ajax({
-                type: "POST",
-                url: "email-templates/event-contact.php",
+                type: "post",
+                url: "https://formspree.io/studyapp121@gmail.com",
                 data: $("#eventcontactform").serialize(),
                 success: function (result) {
                     $('input[type=text],textarea').each(function () {
