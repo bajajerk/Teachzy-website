@@ -11,18 +11,8 @@ $(window).scroll(function () {
 });
 
 $(document).ready(function () {
-  
-    var $buythemediv = '<div class="buy-theme alt-font xs-display-none"><a href="http://themeforest.net/item/brando-responsive-multipurpose-onepage-template/13486658?ref=themezaa" target="_blank"><span>Purchase Theme</span></a></div><div class="quick-question alt-font xs-display-none"><a href="index.html"><span>All Templates</span></a></div>';
-    $('body').append($buythemediv);
-    
-    //Disable mouse scroll wheel zoom on embedded Google Maps
-    $('.maps').click(function () {
-        $('.maps iframe').css("pointer-events", "auto");
-    });
 
-    $(".maps").mouseleave(function () {
-        $('.maps iframe').css("pointer-events", "none");
-    });
+    
 
 /* ===================================
     counter number reset while scrolling
