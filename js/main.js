@@ -848,24 +848,28 @@ $(document).ready(function () {
 
     //Event contact form
 
-    // $("#event-contact-button").click(function () {
-    //     var error = ValidationEventContactForm();
-    //     if (error) {
-    //         $.ajax({
-    //             type: "post",
-    //             url: "https://formspree.io/studyapp121@gmail.com",
-    //             data: $("#eventcontactform").serialize(),
-    //             success: function (result) {
-    //                 $('input[type=text],textarea').each(function () {
-    //                     $(this).val('');
-    //                 })
-    //                 $("#success-contact").html(result);
-    //                 $("#success-contact").fadeIn("slow");
-    //                 $('#success-contact').delay(4000).fadeOut("slow");
-    //             }
-    //         });
-    //     }
-    // });
+    $("#event-contact-button").click(function () {
+        console.log('asdf')
+        var error = ValidationEventContactForm();
+        if (error) {
+            $.ajax({
+                type: "post",
+                url: "https://teachzy-form.herokuapp.com/contact",
+                data: $("#eventcontactform").serialize(),
+                success: function (result) {
+                    console.log("sucess")
+                    $('input[type=text],textarea').each(function () {
+                        $(this).val('');
+                    })
+
+                    // $("#success-contact").html(result);
+                    $("#success-contact").fadeIn("slow");
+                    $('#success-contact').delay(4000).fadeOut("slow");
+                    alert("Thank you for the interest, Some one will connect to you within 24 hours")
+                }
+            });
+        }
+    });
     function ValidationEventContactForm() {
         var error = true;
         $('#eventcontactform input[type=text]').each(function (index) {
@@ -892,6 +896,23 @@ $(document).ready(function () {
     }
 
 
+
+    $("#testing123").on('submit', function(e){
+        console.log("wklmjefkhjep[wdopfj")
+        e.preventDefault();
+        // e.preventDefault();
+        $.ajax({
+            url:'https://teachzy-form.herokuapp.com/contact',
+            type:'post',
+            data:$('#test').serialize(),
+            success:function(){
+                // e.preventDefault();
+                console.log("joioweuihfajeg")
+                alert("Thanks ")
+            }
+        });
+
+    });
     //Coming soon contact form
 
     $("#comingsoon-contact-button").click(function () {
